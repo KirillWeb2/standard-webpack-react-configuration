@@ -6,9 +6,9 @@ module.exports = {
     // мод
     mode: "development",
     // входной файл
-    entry: "./src/index.jsx",
+    entry: "./src/index.tsx",
     resolve: {
-        extensions: ['.js', '.json', '.jsx'],
+        extensions: ['.js', '.json', '.jsx', '.tsx', '.ts'],
     },
     output: {
         // выходная папка
@@ -42,6 +42,11 @@ module.exports = {
             },
             {
                 test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
+            },
+            {
+                test: /\.(ts|tsx)?$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },
